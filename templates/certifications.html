@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-5">Our Certifications</h1>
+    <p class="lead mb-5">At G-ZEN, we're committed to sustainability and environmental responsibility. Learn more about our product certifications below.</p>
+    
+    <div class="row g-4">
+        {% for cert_name, cert_info in certifications.items() %}
+        {% set cert_class = cert_name.lower().replace(' ', '-') %}
+        <div class="col-md-6" id="{{ cert_class }}">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <h3 class="mb-0 me-3">{{ cert_name }}</h3>
+                        <span class="certification-badge {{ cert_class }}">{{ cert_name }}</span>
+                    </div>
+                    <p class="card-text">{{ cert_info.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+// Scroll to specific certification if URL contains a hash
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+            element.scrollIntoView();
+            // Add a highlight effect
+            element.querySelector('.card').classList.add('highlight');
+            setTimeout(() => {
+                element.querySelector('.card').classList.remove('highlight');
+            }, 2000);
+        }
+    }
+});
+</script>
+{% endblock %} 

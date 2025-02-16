@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/' + product.image) }}" class="img-fluid rounded" alt="{{ product.name }}">
+    </div>
+    <div class="col-md-6">
+        <div class="mb-3">
+            {% for cert in product.certifications %}
+            <span class="certification-badge">{{ cert }}</span>
+            {% endfor %}
+        </div>
+        <h1 class="mb-3">{{ product.name }}</h1>
+        <p class="h3 mb-4">${{ "%.2f"|format(product.price) }}</p>
+        <p class="mb-4">{{ product.description }}</p>
+
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+            <input type="hidden" name="product_id" value="{{ product.id }}">
+            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px">
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+        </form>
+
+        <form action="{{ url_for('add_to_wishlist') }}" method="POST" class="d-inline">
+            <input type="hidden" name="product_id" value="{{ product.id }}">
+            <button type="submit" class="btn btn-outline-primary">Add to Wishlist</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

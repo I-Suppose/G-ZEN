@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ category|title }}</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+    {% for product in products %}
+    <div class="col">
+        <div class="product-card">
+            {% include 'product_card.html' %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

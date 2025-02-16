@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1>Wishlist</h1>
+    
+    {% if items %}
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for product in items %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='images/' + product.image) }}"
+                         class="card-img-top"
+                         alt="{{ product.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">${{ "%.2f"|format(product.price) }}</p>
+                        <div class="d-flex justify-content-between">
+                            <form action="{{ url_for('add_to_cart') }}" method="POST">
+                                <input type="hidden" name="product_id" value="{{ product.id }}">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                            <form action="{{ url_for('add_to_wishlist') }}" method="POST">
+                                <input type="hidden" name="product_id" value="{{ product.id }}">
+                                <button type="submit" class="btn btn-outline-danger">
+                                    <i class="bi bi-heart-fill"></i> Remove
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center">
+            <p>Your wishlist is empty</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    {% endif %}
+</div>
+
+<script>
+// Initialize Stripe
+const stripe = Stripe('{{ stripe_public_key }}');
+console.log('Stripe initialized');
+
+// Create Elements instance
+const elements = stripe.elements();
+console.log('Elements created');
+
+// Create payment element
+const paymentElement = elements.create('payment');
+console.log('Payment element created');
+
+// Mount payment element
+paymentElement.mount('#payment-element').then(() => {
+    console.log('Payment element mounted');
+}).catch(error => {
+    console.error('Mount error:', error);
+    document.getElementById('payment-error').textContent = error.message;
+    document.getElementById('payment-error').style.display = 'block';
+});
+
+// Handle form submission
+const form = document.getElementById('payment-form');
+const submitButton = document.getElementById('submit-button');
+const errorDisplay = document.getElementById('payment-error');
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    submitButton.disabled = true;
+    errorDisplay.style.display = 'none';
+
+    try {
+        const response = await fetch('/create-payment-intent', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                amount: {{ total }},
+                shipping_address: form.shipping_address.value
+            })
+        });
+
+        const data = await response.json();
+        if (data.error) throw new Error(data.error);
+
+        const { error } = await stripe.confirmPayment({
+            elements,
+            confirmParams: {
+                return_url: `${window.location.origin}/payment-complete`
+            }
+        });
+
+        if (error) throw error;
+
+    } catch (error) {
+        console.error('Payment error:', error);
+        errorDisplay.textContent = error.message;
+        errorDisplay.style.display = 'block';
+        submitButton.disabled = false;
+    }
+});
+</script>
+{% endblock %}

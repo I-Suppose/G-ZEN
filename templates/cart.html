@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Shopping Cart</h2>
+    {% if cart_items %}
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr data-product-id="{{ item.id }}" data-price="{{ item.price }}">
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ url_for('static', filename='images/' + (item.image if item.image else 'default.jpg')) }}"
+     alt="{{ item.name }}"
+     style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+
+                                {{ item.name }}
+                            </div>
+                        </td>
+                        <td class="price">${{ "%.2f"|format(item.price) }}</td>
+                        <td>
+                            <input type="number" 
+                                   class="form-control quantity-input" 
+                                   value="{{ item.quantity }}" 
+                                   min="1" 
+                                   style="width: 80px"
+                                   data-product-id="{{ item.id }}">
+                        </td>
+                        <td class="item-total">${{ "%.2f"|format(item.total) }}</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm delete-item" 
+                                    data-product-id="{{ item.id }}">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                        <td colspan="2"><strong id="cart-total">${{ "%.2f"|format(total) }}</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="d-flex justify-content-end mt-4">
+            <a href="{{ url_for('checkout') }}" class="btn btn-primary">Proceed to Checkout</a>
+        </div>
+    {% else %}
+        <div class="text-center">
+            <p>Your cart is empty</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    {% endif %}
+
+    <form id="update-cart-form" action="{{ url_for('update_cart') }}" method="POST" style="display: none;">
+        <input type="hidden" name="product_id" id="update-product-id">
+        <input type="hidden" name="quantity" id="update-quantity">
+    </form>
+
+    <form id="remove-cart-form" action="{{ url_for('remove_from_cart') }}" method="POST" style="display: none;">
+        <input type="hidden" name="product_id" id="remove-product-id">
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle quantity changes
+    document.querySelectorAll('.quantity-input').forEach(input => {
+        input.addEventListener('change', function() {
+            const productId = this.dataset.productId;
+            const quantity = parseInt(this.value);
+            const row = this.closest('tr');
+            const price = parseFloat(row.dataset.price);
+            
+            // Update item total
+            const itemTotal = price * quantity;
+            row.querySelector('.item-total').textContent = '$' + itemTotal.toFixed(2);
+            
+            // Update cart total
+            updateCartTotal();
+            
+            // Submit form to update server
+            document.getElementById('update-product-id').value = productId;
+            document.getElementById('update-quantity').value = quantity;
+            document.getElementById('update-cart-form').submit();
+        });
+    });
+
+    // Handle delete buttons
+    document.querySelectorAll('.delete-item').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.dataset.productId;
+            document.getElementById('remove-product-id').value = productId;
+            document.getElementById('remove-cart-form').submit();
+        });
+    });
+
+    // Function to update cart total
+    function updateCartTotal() {
+        let total = 0;
+        document.querySelectorAll('tr[data-product-id]').forEach(row => {
+            const quantity = parseInt(row.querySelector('.quantity-input').value);
+            const price = parseFloat(row.dataset.price);
+            total += price * quantity;
+        });
+        document.getElementById('cart-total').textContent = '$' + total.toFixed(2);
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}G-ZEN{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">G-ZEN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Featured Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('category', category='furniture') }}">Furniture</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('category', category='clothing') }}">Clothing</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('category', category='toys') }}">Toys</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('category', category='stationery') }}">Stationery</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('certifications') }}">Certifications</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('wishlist') }}">
+                            <i class="bi bi-heart"></i>
+                            {% if session.get('wishlist') %}<span class="badge bg-primary">{{ session['wishlist']|length }}</span>{% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('cart') }}">
+                            <i class="bi bi-cart"></i>
+                            {% if session.get('cart') %}<span class="badge bg-primary">{{ session['cart']|length }}</span>{% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('orders') }}" title="Your Orders">
+                            <i class="bi bi-box"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('profile') }}">
+                            <i class="bi bi-person"></i>
+                        </a>
+                    </li>
+                    {% if 'user' in session %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('signup') }}">Sign Up</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification container -->
+    <div id="notification-container"></div>
+
+    <!-- Hidden container for flash messages -->
+    <div id="flash-messages" style="display: none;"
+         data-messages='{{ get_flashed_messages(with_categories=true)|tojson|safe }}'></div>
+
+    <main class="container mt-5 pt-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>G-ZEN</h5>
+                    <p>Sustainable luxury for mindful living.</p>
+                </div>
+                <div class="col-md-4 offset-md-4">
+                    <h5>Contact</h5>
+                    <p>Email: <a href="mailto:info@g-zen.com">info@g-zen.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Create a notification queue
+    const notificationQueue = [];
+    let isProcessingQueue = false;
+
+    // Notification handling function
+    function showNotification(message, type = 'success') {
+        // Add to queue instead of showing immediately
+        notificationQueue.push({ message, type });
+        if (!isProcessingQueue) {
+            processNotificationQueue();
+        }
+    }
+
+    // Process notifications one at a time
+    async function processNotificationQueue() {
+        if (notificationQueue.length === 0) {
+            isProcessingQueue = false;
+            return;
+        }
+
+        isProcessingQueue = true;
+        const { message, type } = notificationQueue.shift();
+        
+        const container = document.getElementById('notification-container');
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            ${message}
+            <button onclick="this.parentElement.remove()">×</button>
+        `;
+        container.appendChild(notification);
+
+        // Wait for notification to be displayed
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        
+        if (notification.parentElement) {
+            notification.remove();
+        }
+
+        // Process next notification
+        setTimeout(() => processNotificationQueue(), 250);
+    }
+
+    // Store flash messages in a global variable
+    const flashMessages = JSON.parse(document.getElementById('flash-messages').getAttribute('data-messages'));
+
+    // Handle flash messages on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Process flash messages if they exist
+        if (Array.isArray(flashMessages)) {
+            flashMessages.forEach(([category, message]) => {
+                showNotification(message, category);
+            });
+        }
+
+        // Handle add to cart form if it exists
+        const addToCartForm = document.getElementById('add-to-cart-form');
+        if (addToCartForm) {
+            addToCartForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        showNotification('Added to Cart Successfully!');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showNotification('Error adding to cart', 'error');
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>

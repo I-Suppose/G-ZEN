@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1>Your Orders</h1>
+
+    {% if orders %}
+        {% for order in orders %}
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="mb-0">Order #{{ order.order_id }}</h5>
+                        <small class="text-muted">Placed on {{ order.date }}</small>
+                        <div class="text-muted">Ordered by: {{ order.customer_name }}</div>
+                    </div>
+                    <span class="badge bg-success">{{ order.status }}</span>
+                </div>
+                <div class="card-body">
+                    <!-- Order Items -->
+                    <div class="mb-4">
+                        <h6 class="mb-3">Items</h6>
+                        {% for item in order.item_list %}
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" 
+                                         alt="{{ item['name'] }}" 
+                                         class="me-3"
+                                         style="width: 50px; height: 50px; object-fit: cover;">
+                                    <div>
+                                        <div class="fw-bold">{{ item['name'] }}</div>
+                                        <small class="text-muted">Quantity: {{ item['quantity'] }}</small>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div>${{ "%.2f"|format(item['price']) }} each</div>
+                                    <strong>${{ "%.2f"|format(item['total']) }}</strong>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">Total</h6>
+                            <h5 class="mb-0">${{ "%.2f"|format(order.total) }}</h5>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address -->
+                    <div>
+                        <h6 class="mb-3">Shipping Address</h6>
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <div>{{ order.shipping_address.street }}</div>
+                                {% if order.shipping_address.line2 %}
+                                    <div>{{ order.shipping_address.line2 }}</div>
+                                {% endif %}
+                                <div>{{ order.shipping_address.unit }}</div>
+                                <div>Singapore {{ order.shipping_address.postal }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="text-center py-5">
+            <p class="mb-4">You haven't placed any orders yet</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Start Shopping</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

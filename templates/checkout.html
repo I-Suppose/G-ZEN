@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1>Checkout</h1>
+    
+    <!-- Order Summary -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2>Order Summary</h2>
+            {% for item in cart_items %}
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <h6 class="mb-0">{{ item.name }}</h6>
+                    <small class="text-muted">Quantity: {{ item.quantity }}</small>
+                </div>
+                <div class="text-end">
+                    <div>${{ "%.2f"|format(item.price) }} each</div>
+                    <strong>${{ "%.2f"|format(item.total) }}</strong>
+                </div>
+            </div>
+            {% endfor %}
+            <hr>
+            <div class="d-flex justify-content-between">
+                <h5>Total</h5>
+                <h5>${{ "%.2f"|format(total) }}</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Information -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2>Payment Information</h2>
+            <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" required 
+                       pattern="[0-9]{16}" maxlength="16"
+                       oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                       placeholder="Enter 16-digit card number">
+                <div class="invalid-feedback">Please enter a valid 16-digit card number.</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="expiryDate" class="form-label">Expiry Date</label>
+                    <input type="text" class="form-control" id="expiryDate" required 
+                           pattern="(0[1-9]|1[0-2])\/([2-9][0-9])" maxlength="5"
+                           placeholder="MM/YY"
+                           oninput="formatExpiryDate(this)">
+                    <div class="invalid-feedback">Please enter a valid expiry date (MM/YY).</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cvv" required 
+                           pattern="[0-9]{3,4}" maxlength="4"
+                           oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                           placeholder="Enter 3-4 digits">
+                    <div class="invalid-feedback">Please enter a valid CVV (3-4 digits).</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shipping Address -->
+    <div class="card">
+        <div class="card-body">
+            <h2>Shipping Address</h2>
+            {% if user.addresses %}
+                <form action="{{ url_for('process_payment') }}" method="POST" id="checkoutForm" onsubmit="return validatePaymentForm()">
+                    {% for address in user.addresses %}
+                    <div class="form-check mb-3">
+                        <input type="radio" class="form-check-input" name="shipping_address" 
+                               id="address{{ loop.index }}" value="{{ loop.index0 }}"
+                               {% if loop.first %}checked{% endif %}>
+                        <label class="form-check-label" for="address{{ loop.index }}">
+                            <div class="p-4 border rounded" style="border-color: #dee2e6 !important;">
+                                <div style="color: #6c8075; font-size: 1.1em; margin-bottom: 1rem;">Address #{{ loop.index }}</div>
+                                <div class="text-muted">Street Address</div>
+                                {{ address.street }}<br>
+                                {% if address.line2 %}
+                                <div class="text-muted mt-2">Second Line</div>
+                                {{ address.line2 }}<br>
+                                {% endif %}
+                                <div class="text-muted mt-2">Unit Number</div>
+                                {{ address.unit }}<br>
+                                <div class="text-muted mt-2">Postal Code</div>
+                                Singapore {{ address.postal }}
+                            </div>
+                        </label>
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary w-100">
+                        Place Order (${{ "%.2f"|format(total) }})
+                    </button>
+                </form>
+            {% else %}
+                <p>Please add a shipping address in your profile first.</p>
+                <a href="{{ url_for('profile') }}" class="btn btn-primary">Add Address</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+function formatExpiryDate(input) {
+    // Remove any non-digit characters
+    let value = input.value.replace(/\D/g, '');
+    
+    // Add slash after month
+    if (value.length >= 2) {
+        value = value.substring(0, 2) + '/' + value.substring(2);
+    }
+    
+    input.value = value;
+}
+
+function validatePaymentForm() {
+    const cardNumber = document.getElementById('cardNumber');
+    const expiryDate = document.getElementById('expiryDate');
+    const cvv = document.getElementById('cvv');
+    let isValid = true;
+
+    // Validate card number
+    if (!cardNumber.value.match(/^[0-9]{16}$/)) {
+        cardNumber.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        cardNumber.classList.remove('is-invalid');
+    }
+
+    // Validate expiry date
+    if (!expiryDate.value.match(/^(0[1-9]|1[0-2])\/([2-9][0-9])$/)) {
+        expiryDate.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        expiryDate.classList.remove('is-invalid');
+    }
+
+    // Validate CVV
+    if (!cvv.value.match(/^[0-9]{3,4}$/)) {
+        cvv.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        cvv.classList.remove('is-invalid');
+    }
+
+    return isValid;
+}
+
+// Add input event listeners to remove invalid class when user starts typing
+document.getElementById('cardNumber').addEventListener('input', function() {
+    this.classList.remove('is-invalid');
+});
+document.getElementById('expiryDate').addEventListener('input', function() {
+    this.classList.remove('is-invalid');
+});
+document.getElementById('cvv').addEventListener('input', function() {
+    this.classList.remove('is-invalid');
+});
+</script>
+{% endblock %}

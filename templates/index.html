@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section text-center py-5 mb-5" style="background-color: #96AB97;">
+    <h1 class="display-4 text-white">Sustainable Luxury Living</h1>
+    <p class="lead text-white">Discover eco-friendly products that don't compromise on style</p>
+    <a href="#categories" class="btn btn-light">Shop Now</a>
+</div>
+
+<h2 class="text-center mb-4">Featured Categories</h2>
+<div class="row g-4" id="categories">
+    <div class="col-md-6">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/furniture.jpg') }}" class="card-img-top" alt="Furniture">
+            <div class="card-body text-center">
+                <h3>Furniture</h3>
+                <p>Sustainable and stylish home pieces</p>
+                <a href="{{ url_for('category', category='furniture') }}" class="btn btn-secondary">Shop Furniture</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/clothing.jpg') }}" class="card-img-top" alt="Clothing">
+            <div class="card-body text-center">
+                <h3>Clothing</h3>
+                <p>Eco-friendly fashion essentials</p>
+                <a href="{{ url_for('category', category='clothing') }}" class="btn btn-secondary">Shop Clothing</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/toys.jpg') }}" class="card-img-top" alt="Toys">
+            <div class="card-body text-center">
+                <h3>Toys</h3>
+                <p>Sustainable toys for mindful play</p>
+                <a href="{{ url_for('category', category='toys') }}" class="btn btn-secondary">Shop Toys</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/stationery.jpg') }}" class="card-img-top" alt="Stationery">
+            <div class="card-body text-center">
+                <h3>Stationery</h3>
+                <p>Eco-conscious writing essentials</p>
+                <a href="{{ url_for('category', category='stationery') }}" class="btn btn-secondary">Shop Stationery</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
