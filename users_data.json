@@ -1,0 +1,1077 @@
+{
+    "user@example.com": {
+        "password": "password123",
+        "first_name": "John",
+        "last_name": "Doe",
+        "addresses": []
+    },
+    "mookjunjie@gmail.com": {
+        "password": "999",
+        "first_name": "Mook",
+        "last_name": "Jun Jie",
+        "addresses": [
+            {
+                "street": "50 Choa Chu Kang North 7",
+                "line2": " Regent Grove Tower A ",
+                "unit": "#09-03 ",
+                "postal": "689527"
+            },
+            {
+                "street": "Blk 111 Hougang St 1",
+                "line2": "",
+                "unit": " #01-111",
+                "postal": "111111"
+            }
+        ],
+        "orders": [
+            {
+                "order_id": "ORD-20250216235027",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 4,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 3599.96,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 11,
+                        "quantity": 1,
+                        "name": "Organic Cotton T-Shirt",
+                        "price": 39.99,
+                        "total": 39.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 3639.95,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 23:50:27",
+                "status": "Placed",
+                "customer_name": "Mook Jun Jie"
+            },
+            {
+                "order_id": "ORD-20250216184438",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:44:38",
+                "status": "Placed",
+                "customer_name": "Mook Jun Jie"
+            },
+            {
+                "order_id": "ORD-20250216184047",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:40:47",
+                "status": "Placed",
+                "customer_name": "Mook Jun Jie"
+            },
+            {
+                "order_id": "ORD-20250216184025",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:40:25",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216183834",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:38:34",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216183359",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:33:59",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216183131",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:31:31",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216182925",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:29:25",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216182751",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:27:51",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216182438",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:24:38",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216182227",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ],
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:22:27",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook"
+            },
+            {
+                "order_id": "ORD-20250216181434",
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:14:34",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216181110",
+                "total": 899.99,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:11:10",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216180951",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:09:51",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216180653",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:06:53",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216180352",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:03:52",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216180024",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 18:00:24",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216175652",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:56:52",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216175131",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:51:31",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216174544",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:45:44",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216174306",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:43:06",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216174004",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:40:04",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216173621",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:36:21",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216173126",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:31:26",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216172954",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:29:54",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216172658",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:26:58",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216172215",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:22:15",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216172043",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:20:43",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216171919",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:19:19",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216171741",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:17:41",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216171727",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:17:27",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216171714",
+                "total": 0,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:17:14",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": []
+            },
+            {
+                "order_id": "ORD-20250216171706",
+                "total": 1199.98,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:17:06",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216171507",
+                "total": 0,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:15:07",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": []
+            },
+            {
+                "order_id": "ORD-20250216171438",
+                "total": 2099.9700000000003,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:14:38",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 2,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 1799.98
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 1,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 299.99
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216171412",
+                "total": 0,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:14:12",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": []
+            },
+            {
+                "order_id": "ORD-20250216171408",
+                "total": 0,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:14:08",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": []
+            },
+            {
+                "order_id": "ORD-20250216171130",
+                "total": 1799.96,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:11:30",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": [
+                    {
+                        "id": 2,
+                        "quantity": 1,
+                        "name": "Reclaimed Wood Dining Table",
+                        "price": 899.99,
+                        "total": 899.99,
+                        "image": "placeholder.jpg"
+                    },
+                    {
+                        "id": 1,
+                        "quantity": 3,
+                        "name": "Bamboo Chair",
+                        "price": 299.99,
+                        "total": 899.97,
+                        "image": "placeholder.jpg"
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD-20250216171105",
+                "total": 0,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:11:05",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": []
+            },
+            {
+                "order_id": "ORD-20250216171010",
+                "total": 0,
+                "shipping_address": {
+                    "street": "50 Choa Chu Kang North 7",
+                    "line2": " Regent Grove Tower A ",
+                    "unit": "#09-03 ",
+                    "postal": "689527"
+                },
+                "date": "2025-02-16 17:10:10",
+                "status": "Placed",
+                "customer_name": "Jun Jie Mook",
+                "item_list": []
+            }
+        ]
+    },
+    "243031H@mymail.nyp.edu.sg": {
+        "password": "1",
+        "first_name": "Kendric",
+        "last_name": "Lee",
+        "addresses": [
+            {
+                "street": "sds",
+                "line2": "sadas",
+                "unit": "sada",
+                "postal": "sadas"
+            }
+        ],
+        "orders": []
+    }
+}
